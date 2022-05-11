@@ -19,26 +19,16 @@ public class RespawnPlane : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("Collided");
         if (other.tag == "Player")
         {
-            //Debug.Log("Collided with a game object with the tag Player");
-            //Debug.Log(other.transform.position);
             other.transform.position = new Vector3(136.8f, 4.9f, -98f);
-            //Debug.Log(other.transform.position);
-            //Debug.Log("After transforming");
         }
     }
     private void OnTriggerStay(Collider other)
     {
-        //Debug.Log("Collided");
         if (other.tag == "Player")
         {
-            //Debug.Log("Collided with a game object with the tag Player");
-            //Debug.Log(other.transform.position);
             other.transform.position = new Vector3(136.8f, 4.9f, -98f);
-            //Debug.Log(other.transform.position);
-            //Debug.Log("After transforming");
         }
         else if(other.tag == "Camera")
         {

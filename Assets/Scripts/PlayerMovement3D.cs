@@ -22,6 +22,7 @@ public class PlayerMovement3D : MonoBehaviour
 
     private void Start()
     {
+        speed = baseSpeed;
         ps = GetComponent<ParticleSystem>();
         emission = ps.emission;
         emission.enabled = false;
@@ -61,16 +62,11 @@ public class PlayerMovement3D : MonoBehaviour
     }
      public IEnumerator ChangeSpeed(float speed,float durationInSeconds)
     {
-        Debug.Log(this.speed);
         this.speed += speed;
-        Debug.Log(this.speed);
         emission.enabled = true;
-        Debug.Log(durationInSeconds);
         yield return new WaitForSeconds(durationInSeconds);
-        Debug.Log("After waiting");
         this.speed -= speed;
         if(this.speed == baseSpeed)
         emission.enabled = false;
-        Debug.Log(this.speed);
     }
 }
